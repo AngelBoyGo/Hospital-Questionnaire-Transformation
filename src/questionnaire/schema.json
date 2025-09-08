@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "title": "Metis Universal Implementation Questionnaire",
+  "sections": [
+    {
+      "id": "facility_identity",
+      "title": "Facility Identity",
+      "questions": [
+        { "id": "facilityName", "label": "Hospital/Facility Name", "type": "text", "required": true, "var": "facilityName" },
+        { "id": "facilityType", "label": "Facility Type", "type": "select", "required": true, "options": ["academic", "community", "critical_access", "specialty", "multi_site", "general"], "var": "facilityType" },
+        { "id": "bedCount", "label": "Number of Licensed Beds", "type": "number", "min": 1, "max": 5000, "required": true, "var": "bedCount" }
+      ]
+    },
+    {
+      "id": "clinical_systems",
+      "title": "Clinical Systems",
+      "questions": [
+        { "id": "primaryEHR", "label": "Primary EHR", "type": "select", "required": true, "options": ["epic", "cerner", "meditech", "allscripts", "athenahealth", "other"], "var": "primaryEHR" },
+        { "id": "clinicalSystems", "label": "Additional Clinical Systems", "type": "multi_select", "options": ["pacs", "lis", "pharmacy", "cardiology", "radiology", "anesthesia"], "var": "clinicalSystems" }
+      ]
+    },
+    {
+      "id": "integration",
+      "title": "Integration",
+      "questions": [
+        { "id": "integrationNeeds", "label": "Integration Needs", "type": "text", "placeholder": "HL7, FHIR, Custom API", "var": "integrationNeeds" },
+        { "id": "interoperabilityStandards", "label": "Interoperability Standards", "type": "multi_select", "options": ["FHIR", "HL7", "DICOM", "SNOMED CT"], "var": "interoperabilityStandards" }
+      ]
+    },
+    {
+      "id": "security_compliance",
+      "title": "Security & Compliance",
+      "questions": [
+        { "id": "complianceFrameworks", "label": "Required Frameworks", "type": "multi_select", "options": ["HIPAA", "HITECH", "SOC2", "HITRUST", "GDPR"], "required": true, "var": "complianceFrameworks" }
+      ]
+    },
+    {
+      "id": "timeline_budget",
+      "title": "Timeline & Budget",
+      "questions": [
+        { "id": "timeline", "label": "Desired Go-Live Timeline", "type": "select", "options": ["30_days", "60_days", "90_days", "6_months", "1_year", "flexible"], "required": true, "var": "timeline" }
+      ]
+    }
+  ],
+  "defaults": {
+    "facilityType": "community",
+    "bedCount": 100,
+    "primaryEHR": "epic",
+    "clinicalSystems": ["pacs", "lis"],
+    "integrationNeeds": "HL7, FHIR",
+    "interoperabilityStandards": ["FHIR", "HL7"],
+    "complianceFrameworks": ["HIPAA"],
+    "timeline": "60_days"
+  }
+}

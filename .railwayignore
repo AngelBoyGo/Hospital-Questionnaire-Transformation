@@ -1,0 +1,46 @@
+# Railway Ignore File
+# Similar to .dockerignore but for Railway-specific exclusions
+
+# Development files
+*.log
+*.tmp
+.env.local
+.env.development
+
+# Test files
+tests/
+__tests__/
+*.test.js
+*.spec.js
+coverage/
+
+# Documentation (keep essential docs)
+docs/
+*.md
+!README.md
+
+# Kubernetes files (not needed for Railway)
+deployment/k8s/
+*.yaml
+*.yml
+!railway.toml
+
+# Development dependencies
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,32 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "hospital-sandbox-generator"
+source = "."
+
+[services.variables]
+NODE_ENV = "production"
+REAL_DEPLOYMENT = "true"
+PORT = "3000"
+
+# Database will be auto-injected by Railway PostgreSQL
+# DATABASE_URL = "${{Postgres.DATABASE_URL}}"
+# REDIS_URL = "${{Redis.REDIS_URL}}"
+
+[services.healthcheck]
+path = "/health"
+interval = 30
+timeout = 10
+retries = 3
+
+[services.resources]
+memory = "1GB"
+cpu = "1vCPU"

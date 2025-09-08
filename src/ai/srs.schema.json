@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["functionalRequirements", "nonFunctionalRequirements", "compliance"],
+  "properties": {
+    "functionalRequirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string" },
+          "acceptance": { "type": "string" }
+        }
+      }
+    },
+    "nonFunctionalRequirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string" },
+          "acceptance": { "type": "string" }
+        }
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "properties": {
+        "hipaa": { "type": "object" },
+        "nist80066": { "type": "object" }
+      }
+    },
+    "vendorIntegrations": { "type": "array" },
+    "implementationPhases": { "type": "array" },
+    "citations": { "type": "array" },
+    "traceability": { "type": "object" }
+  }
+}
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "functionalRequirements",
+    "nonFunctionalRequirements",
+    "compliance",
+    "vendorIntegrations",
+    "implementationPhases",
+    "citations",
+    "traceability"
+  ],
+  "properties": {
+    "functionalRequirements": { "type": "array" },
+    "nonFunctionalRequirements": { "type": "array" },
+    "compliance": { "type": "object" },
+    "vendorIntegrations": { "type": "array" },
+    "implementationPhases": { "type": "array" },
+    "citations": { "type": "array" },
+    "traceability": { "type": "object" }
+  }
+}
+
+
