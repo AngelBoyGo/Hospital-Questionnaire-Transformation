@@ -7,10 +7,10 @@
  * This replaces the simulated deployment in SandboxBuilder with actual container management
  */
 
-import k8s from('@kubernetes/client-node');
-import yaml from('js-yaml');
-import { promises as fs } from('fs').promises;
-import path from('path');
+const k8s = require('@kubernetes/client-node');
+const yaml = require('js-yaml');
+const fs = require('fs').promises;
+const path = require('path');
 
 class RealContainerManager {
   constructor() {

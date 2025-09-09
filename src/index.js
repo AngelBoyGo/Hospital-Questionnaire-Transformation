@@ -3,12 +3,12 @@
  * Enterprise deployment on OwlCloud with real container integration
  */
 
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const SandboxBuilderReal = require('./sandbox/SandboxBuilderReal');
-const SRSDocumentReader = require('./sandbox/SRSDocumentReader');
+import express from('express');
+import cors from('cors');
+import helmet from('helmet');
+import rateLimit from('express-rate-limit');
+import SandboxBuilderReal from('./sandbox/SandboxBuilderReal');
+import SRSDocumentReader from('./sandbox/SRSDocumentReader');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
